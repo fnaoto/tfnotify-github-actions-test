@@ -12,7 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: init
+      - name: Setup
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 0.14.11
+      - name: Init
         run: terraform init terraform
-      - name: plan
+      - name: Plan
         run: terraform plan terraform
