@@ -12,5 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test
-        run: terraform init && terraform plan 
+      - name: init
+        run: terraform init terraform
+      - name: plan
+        run: terraform plan terraform
